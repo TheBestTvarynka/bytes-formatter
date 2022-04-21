@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Bytes formatter</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <span class="title">Bytes formatter</span>
+        <span>The purpose of this tool is to convert bytes between different representations. See <a
+                href="#examples">examples</a>.</span>
+    </header>
+    <article>
+        <div class="parameters">
+            <span>in:</span>
+            <select id="inType">
+                <option value="decimal" selected>Decimal</option>
+                <option value="hex">Hex</option>
+                <option value="base64">Base64</option>
+                <option value="aescii">Aescii</option>
+            </select>
+            <span>out:</span>
+            <select id="outType">
+                <option value="decimal">Decimal</option>
+                <option value="hex" selected>Hex</option>
+                <option value="base64">Base64</option>
+                <option value="aescii">Aescii</option>
+            </select>
+        </div>
+        <textarea id="inputData" placeholder="Input data..." rows="7"></textarea>
+        <button>decode</button>
+        <textarea id="outputData" placeholder="Outout data..." readonly rows="7">fref</textarea>
+    </article>
+    <footer>
+        <span>Bytes formatter Copyright © 2022 Pavlo Myroniuk; released as <a
+                href="https://github.com/TheBestTvarynka/bytes-formatter">open source</a> under the
+            <a href="https://github.com/TheBestTvarynka/bytes-formatter/blob/main/LICENSE">MIT</a>
+            license.</span>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
