@@ -90,3 +90,5 @@ const decode = () => {
 
   outData.value = value;
 };
+
+const copyOutputData = () => navigator.clipboard.writeText(document.getElementById('outData').value);

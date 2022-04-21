@@ -1,4 +1,3 @@
-
 body {
     font-family: 'Source Code Pro', monospace;
     padding: 0;
@@ -49,6 +48,31 @@ textarea {
     font-family: 'Source Code Pro', monospace;
 }
 
+.tools {
+    width: 100%;
+    display: inline-flex;
+    margin-top: 0.7em;
+}
+
+.tool {
+    display: inline-flex;
+    cursor: pointer;
+    height: 2em;
+    width: fit-content;
+    padding: 0.1em;
+    border-radius: 0.2em;
+    justify-content: center;
+    align-items: center;
+}
+
+.tool:hover {
+    background-color: aliceblue;
+}
+
+.tool>img {
+    height: 90%;
+}
+
 footer {
     width: 70%;
     display: flex;
@@ -58,7 +82,7 @@ footer {
     margin-top: 2em;
 }
 
-footer > span {
+footer>span {
     margin: 1em;
     text-align: center;
 }
