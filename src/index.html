@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300&display=swap" rel="stylesheet">
+    <script src="script.js"></script>
 </head>
 
 <body>
@@ -28,14 +29,15 @@
             <span>out:</span>
             <select id="outType">
                 <option value="decimal">Decimal</option>
+                <option value="decimalArray">Decimal</option>
                 <option value="hex" selected>Hex</option>
                 <option value="base64">Base64</option>
-                <option value="aescii">Aescii</option>
+                <option value="ascii">Aescii</option>
             </select>
         </div>
-        <textarea id="inputData" placeholder="Input data..." rows="7"></textarea>
-        <button>decode</button>
-        <textarea id="outputData" placeholder="Outout data..." readonly rows="7">fref</textarea>
+        <textarea id="inData" placeholder="Input data..." rows="7"></textarea>
+        <button onclick="decode()">decode</button>
+        <textarea id="outData" placeholder="Outout data..." readonly rows="7">fref</textarea>
     </article>
     <footer>
         <span>Bytes formatter Copyright © 2022 Pavlo Myroniuk; released as <a
@@ -44,7 +46,6 @@
             license.</span>
     </footer>
 
-    <script src="script.js"></script>
 </body>
 
 </html>
