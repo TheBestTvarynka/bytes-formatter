@@ -83,6 +83,9 @@ footer {
 }
 
 footer>span {
-    margin: 1em;
     text-align: center;
+}
+
+footer>span:first-child {
+    margin-top: 1em;
 }
