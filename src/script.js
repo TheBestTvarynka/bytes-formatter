@@ -118,3 +118,14 @@ const toggleAsn1Button = () => {
     document.getElementById('asn1Tool').classList.add('hide');
   }
 };
+
+const share = () => {
+  const inType = document.getElementById('inType').selectedOptions[0].value;
+  const outType = document.getElementById('outType').selectedOptions[0].value;
+  const data = document.getElementById('inData').value;
+
+  const url = `?in=${inType}&out=${outType}&data=${encodeURIComponent(data)}`;
+
+  window.history.pushState(url, url, url);
+  navigator.clipboard.writeText(window.location.href);
+};
