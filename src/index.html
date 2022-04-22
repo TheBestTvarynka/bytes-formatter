@@ -11,7 +11,7 @@
     <script src="script.js"></script>
 </head>
 
-<body onload="toggleAsn1Button()">
+<body onload="onBodyLoad()">
     <header>
         <span class="title">Bytes formatter</span>
         <span>The purpose of this tool is to convert bytes between different representations. See <a
@@ -40,7 +40,7 @@
         </div>
         <textarea id="inData" placeholder="Input data..." rows="7"></textarea>
         <button onclick="decode()">convert</button>
-        <textarea id="outData" placeholder="Outout data..." readonly rows="7">The output data will be here</textarea>
+        <textarea id="outData" placeholder="Output data..." readonly rows="7"></textarea>
         <div class="tools">
             <div class="tool" onclick="copyOutputData()">
                 <img src="../img/copy.png" alt="copy" />

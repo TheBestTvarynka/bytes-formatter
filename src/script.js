@@ -102,6 +102,8 @@ const swap = () => {
 
   inData.value = outData.value;
   outData.value = buf;
+
+  toggleAsn1Button();
 }
 
 const decodeAsAsn1 = () => window.open(
@@ -117,6 +119,26 @@ const toggleAsn1Button = () => {
   } else {
     document.getElementById('asn1Tool').classList.add('hide');
   }
+};
+
+const onBodyLoad = () => {
+  let parameters = new URLSearchParams(window.location.search);
+
+  console.dir(parameters);
+
+  if (parameters.get('in')) {
+    document.getElementById('inType').value = parameters.get('in');
+  }
+
+  if (parameters.get('out')) {
+    document.getElementById('outType').value = parameters.get('out');
+  }
+
+  if (parameters.get('data')) {
+    document.getElementById('inData').value = decodeURIComponent(parameters.get('data'));
+  }
+
+  toggleAsn1Button();
 };
 
 const share = () => {
