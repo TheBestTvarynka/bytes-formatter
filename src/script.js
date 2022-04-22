@@ -81,14 +81,7 @@ const decode = () => {
   const inData = document.getElementById('inData').value;
   const outData = document.getElementById('outData');
 
-  console.dir({ inType, outType, inData });
-
-  const bytes = parsers[inType](inData);
-  const value = formatters[outType](bytes);
-
-  console.log({ bytes, value });
-
-  outData.value = value;
+  outData.value = formatters[outType](parsers[inType](inData));
 };
 
 const copyOutputData = () => navigator.clipboard.writeText(document.getElementById('outData').value);
@@ -110,3 +103,18 @@ const swap = () => {
   inData.value = outData.value;
   outData.value = buf;
 }
+
+const decodeAsAsn1 = () => window.open(
+  `https://lapo.it/asn1js/#${document.getElementById('outData').value}`,
+  '_blank'
+).focus();
+
+const toggleAsn1Button = () => {
+  const outType = document.getElementById('outType').value;
+
+  if (outType === 'hex' || outType === 'base64') {
+    document.getElementById('asn1Tool').classList.remove("hide");
+  } else {
+    document.getElementById('asn1Tool').classList.add('hide');
+  }
+};

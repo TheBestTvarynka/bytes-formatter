@@ -11,7 +11,7 @@
     <script src="script.js"></script>
 </head>
 
-<body>
+<body onload="toggleAsn1Button()">
     <header>
         <span class="title">Bytes formatter</span>
         <span>The purpose of this tool is to convert bytes between different representations. See <a
@@ -27,7 +27,7 @@
                 <option value="ascii">Ascii</option>
             </select>
             <span>out:</span>
-            <select id="outType">
+            <select id="outType" onchange="toggleAsn1Button()">
                 <option value="decimal">Decimal</option>
                 <option value="decimalArray">Decimal array</option>
                 <option value="hex" selected>Hex</option>
@@ -44,6 +44,10 @@
         <div class="tools">
             <div class="tool" onclick="copyOutputData()">
                 <img src="../img/copy.png" alt="copy" />
+            </div>
+            <div id="asn1Tool" class="hide labeledTool" onclick="decodeAsAsn1()">
+                <img src="../img/linking1.png" alt="asn1" />
+                <span>asn1</span>
             </div>
         </div>
     </article>

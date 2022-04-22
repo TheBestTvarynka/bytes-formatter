@@ -72,6 +72,8 @@ textarea {
     width: 100%;
     display: inline-flex;
     margin-top: 0.7em;
+    gap: 0.3em;
+    align-items: center;
 }
 
 .tool {
@@ -91,6 +93,31 @@ textarea {
 
 .tool>img {
     height: 90%;
+}
+
+.hide {
+    display: none !important;
+}
+
+.labeledTool {
+    display: inline-flex;
+    cursor: pointer;
+    height: 1.5em;
+    width: fit-content;
+    padding: 0.1em 0.2em 0.1em 0.2em;
+    border-radius: 0.2em;
+    border: 2px solid black;
+    justify-content: center;
+    align-items: center;
+    gap: 0.2em;
+}
+
+.labeledTool:hover {
+    background-color: aliceblue;
+}
+
+.labeledTool>img {
+    height: 80%;
 }
 
 footer {
