@@ -86,6 +86,10 @@ const saveInLocalStorage = () => {
 const loadFromLocalStorage = () => {
   const parameters = JSON.parse(window.localStorage.getItem('params'));
 
+  if (!parameters) {
+    return;
+  }
+
   if (parameters['inType']) {
     document.getElementById('inType').value = parameters['inType'];
   }
