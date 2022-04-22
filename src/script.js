@@ -74,7 +74,7 @@ const formatters = {
   'ascii': toAscii,
 };
 
-const decode = () => {
+const convert = () => {
   const inType = document.getElementById('inType').selectedOptions[0].value;
   const outType = document.getElementById('outType').selectedOptions[0].value;
 
@@ -121,6 +121,16 @@ const toggleAsn1Button = () => {
   }
 };
 
+const toggleAutoConvert = () => {
+  if (document.getElementById('autoConvert').checked) {
+    document.getElementById('inData').addEventListener('change', convert);
+    document.getElementById('inData').addEventListener('input', convert);
+  } else {
+    document.getElementById('inData').removeEventListener('change', convert);
+    document.getElementById('inData').removeEventListener('input', convert);
+  }
+};
+
 const onBodyLoad = () => {
   let parameters = new URLSearchParams(window.location.search);
 
@@ -139,6 +149,7 @@ const onBodyLoad = () => {
   }
 
   toggleAsn1Button();
+  toggleAutoConvert();
 };
 
 const share = () => {

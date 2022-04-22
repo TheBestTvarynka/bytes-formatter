@@ -39,7 +39,12 @@
             </div>
         </div>
         <textarea id="inData" placeholder="Input data..." rows="7"></textarea>
-        <button onclick="decode()">convert</button>
+        <div class="tools">
+            <button onclick="convert()">convert</button>
+            <label for="autoConvert" onchange="toggleAutoConvert()">
+                <input id="autoConvert" name="autoConvert" type="checkbox"><span>auto convert</span>
+            </label>
+        </div>
         <textarea id="outData" placeholder="Output data..." readonly rows="7"></textarea>
         <div class="tools">
             <div class="tool" onclick="copyOutputData()">
