@@ -74,6 +74,38 @@ const formatters = {
   'ascii': toAscii,
 };
 
+const saveInLocalStorage = () => {
+  const inType = document.getElementById('inType').selectedOptions[0].value;
+  const outType = document.getElementById('outType').selectedOptions[0].value;
+  const inData = document.getElementById('inData').value;
+  const autoConvert = document.getElementById('autoConvert').checked;
+
+  window.localStorage.setItem('params', JSON.stringify({ inType, outType, inData, autoConvert }));
+};
+
+const loadFromLocalStorage = () => {
+  const parameters = JSON.parse(window.localStorage.getItem('params'));
+
+  if (parameters['inType']) {
+    document.getElementById('inType').value = parameters['inType'];
+  }
+
+  if (parameters['outType']) {
+    document.getElementById('outType').value = parameters['outType'];
+  }
+
+  if (parameters['inData']) {
+    document.getElementById('inData').value = decodeURIComponent(parameters['inData']);
+  }
+
+  if (parameters['autoConvert']) {
+    document.getElementById('autoConvert').checked = parameters['autoConvert'];
+  }
+
+  toggleAsn1Button();
+  toggleAutoConvert();
+};
+
 const convert = () => {
   const inType = document.getElementById('inType').selectedOptions[0].value;
   const outType = document.getElementById('outType').selectedOptions[0].value;
@@ -82,6 +114,8 @@ const convert = () => {
   const outData = document.getElementById('outData');
 
   outData.value = formatters[outType](parsers[inType](inData));
+
+  saveInLocalStorage();
 };
 
 const copyOutputData = () => navigator.clipboard.writeText(document.getElementById('outData').value);
@@ -136,20 +170,24 @@ const onBodyLoad = () => {
 
   console.dir(parameters);
 
-  if (parameters.get('in')) {
-    document.getElementById('inType').value = parameters.get('in');
-  }
+  if (parameters.entries.length > 0) {
+    if (parameters.get('in')) {
+      document.getElementById('inType').value = parameters.get('in');
+    }
 
-  if (parameters.get('out')) {
-    document.getElementById('outType').value = parameters.get('out');
-  }
+    if (parameters.get('out')) {
+      document.getElementById('outType').value = parameters.get('out');
+    }
 
-  if (parameters.get('data')) {
-    document.getElementById('inData').value = decodeURIComponent(parameters.get('data'));
-  }
+    if (parameters.get('data')) {
+      document.getElementById('inData').value = decodeURIComponent(parameters.get('data'));
+    }
 
-  toggleAsn1Button();
-  toggleAutoConvert();
+    toggleAsn1Button();
+    toggleAutoConvert();
+  } else {
+    loadFromLocalStorage();
+  }
 };
 
 const share = () => {
