@@ -1,4 +1,4 @@
-# bytes-formatter
+## bytes-formatter
 
 ![](img/example.png)
 
@@ -8,17 +8,18 @@ Convert bytes between different representations: hex, base64, decimal, ascii, et
 
 Main features:
 
+* supported formats: decimal, hex, base64, ascii
 * share by the link
-* Integrated [asn1 parser](https://lapo.it/asn1js/) (available for `hex` and `base64` output types)
+* integrated [asn1 parser](https://lapo.it/asn1js/) (available for `hex` and `base64` output types)
 * remembers current state
 
-## Meta
+### Meta
 
 Pavlo Myroniuk - [pspos.developqkation@gmail.com](mailto:pspos.developqkation@gmail.com).
 
 Distributed under the [MIT](https://github.com/TheBestTvarynka/bytes-formatter/blob/main/LICENSE) license.
 
-## Contributing
+### Contributing
 
 Feel free to contribute.
 
