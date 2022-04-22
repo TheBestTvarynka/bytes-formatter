@@ -92,3 +92,21 @@ const decode = () => {
 };
 
 const copyOutputData = () => navigator.clipboard.writeText(document.getElementById('outData').value);
+
+const swap = () => {
+  const inType = document.getElementById('inType');
+  const outType = document.getElementById('outType');
+
+  let buf = inType.selectedOptions[0].value;
+
+  inType.value = outType.selectedOptions[0].value;
+  outType.value = buf;
+
+  const inData = document.getElementById('inData');
+  const outData = document.getElementById('outData');
+
+  buf = inData.value;
+
+  inData.value = outData.value;
+  outData.value = buf;
+}
