@@ -1,3 +1,18 @@
+const fromBinary = data => {
+  const bits = data
+    .split('')
+    .filter(c => c === '1' || c === '0')
+    .map(n => parseInt(n, 2));
+  let bytes = [];
+
+  for (let i = 0; i < bits.length; i += 8) {
+    const rawByte = bits.slice(i, i + 8).join('').padStart(8, '0');
+    bytes.push(parseInt(rawByte, 2));
+  }
+
+  return new Uint8Array(bytes);
+};
+
 const fromDecimal = data => new Uint8Array(
   data
     .split(/\D/)
@@ -34,10 +49,21 @@ const fromBase64 = data => {
 };
 
 const parsers = {
+  'binary': fromBinary,
   'decimal': fromDecimal,
   'hex': fromHex,
   'base64': fromBase64,
   'ascii': fromAscii,
+};
+
+const toBinary = data => {
+  const binary = [];
+
+  for (const byte of data) {
+    binary.push(byte.toString(2).padStart(8, '0'));
+  }
+
+  return binary.join(' ');
 };
 
 const toDecimal = data => data.join(' ');
@@ -67,6 +93,7 @@ const toAscii = data => {
 };
 
 const formatters = {
+  'binary': toBinary,
   'decimal': toDecimal,
   'decimalArray': toDecimalArray,
   'hex': toHex,
