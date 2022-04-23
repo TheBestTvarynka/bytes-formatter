@@ -5,6 +5,7 @@
     <meta charset="UTF-8" />
     <title>Bytes formatter</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="examples.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300&display=swap" rel="stylesheet">
@@ -14,10 +15,35 @@
 <body onload="onBodyLoad()">
     <header>
         <span class="title">Bytes formatter</span>
-        <span>The purpose of this tool is to convert bytes between different representations. See <a
-                href="#examples">examples</a>.</span>
+        <span>The purpose of this tool is to convert bytes between different representations. See <span
+                onclick="toggleExamples()" class="clickableText">input examples</span>.</span>
     </header>
     <article>
+        <div id="examples" class="hide examples">
+            <div class="exampleRow">
+                <div class="description">
+                    <span class="exampleTitle">Decimal</span>
+                    <span>Numbers in range [0..256) and separated with the whitespases, tabs, new lines, etc</span>
+                    <span>Alphabetic or special chars will be ignored</span>
+                </div>
+                <div class="inputExample">
+                    <code>[1, 2, 3, 4]</code>
+                    <code>1, 2, 3, 4,</code>
+                    <code>11de, 43dokrf, forkfr, 154</code>
+                </div>
+            </div>
+            <div class="exampleRow">
+                <div class="description">
+                    <span class="exampleTitle">Hex</span>
+                    <span>Hex chars separated (or not) with the whitespases, tabs, new lines, etc</span>
+                    <span>Not hex chars will be ignored</span>
+                </div>
+                <div class="inputExample">
+                    <code>0102aab3</code>
+                    <code>01 02 aa b3</code>
+                </div>
+            </div>
+        </div>
         <div class="parameters">
             <span>in:</span>
             <select id="inType">

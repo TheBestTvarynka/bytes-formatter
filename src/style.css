@@ -29,6 +29,11 @@ article {
     justify-content: center;
 }
 
+.clickableText {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
 .parameters {
     width: 100%;
     display: inline-flex;
@@ -126,6 +131,7 @@ footer {
     justify-content: center;
     border-top: 2px solid black;
     margin-top: 2em;
+    margin-bottom: 2em;
 }
 
 footer>span {

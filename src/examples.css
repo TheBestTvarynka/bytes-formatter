@@ -1,0 +1,48 @@
+.examples {
+  width: calc(100% - 1em);
+  border-radius: 0.5em;
+  background-color: aliceblue;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 0.5em;
+  margin-top: 0.7em;
+  gap: 0.5em;
+}
+
+.exampleRow {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 40% 60%;
+}
+
+.exampleRow:not(:first-child) {
+  border-top: 3px solid #e0e0e0;
+  padding-top: 0.5em;
+}
+
+.description {
+  padding: 0.3em;
+  font-size: 0.8em;
+  border-right: 3px solid #e0e0e0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.description>.exampleTitle {
+  font-size: 1.1em;
+  border-bottom: 1px solid darkslategrey;
+}
+
+.inputExample {
+  margin-left: 0.5em;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  font-size: 0.9em;
+  padding: 0.3em;
+}

@@ -159,6 +159,16 @@ const toggleAsn1Button = () => {
   }
 };
 
+const toggleExamples = () => {
+  const examples = document.getElementById('examples');
+
+  if (examples.classList.contains('hide')) {
+    examples.classList.remove('hide');
+  } else {
+    examples.classList.add('hide');
+  }
+};
+
 const toggleAutoConvert = () => {
   if (document.getElementById('autoConvert').checked) {
     document.getElementById('inData').addEventListener('change', convert);
