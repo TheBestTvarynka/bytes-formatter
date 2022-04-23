@@ -6,6 +6,7 @@ on: [push]
 jobs:
   deploy:
     name: Deploy
+    runs-on: ubuntu-latest
 
     permissions:
       contents: 'read'
