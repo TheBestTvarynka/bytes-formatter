@@ -4,7 +4,7 @@
 
 Visit this tool at [bf.qkation.com/index.html](https://bf.qkation.com/index.html).
 
-Convert bytes between different representations: hex, base64, decimal, ascii, etc.
+Converts bytes between different representations: hex, base64, decimal, ascii, etc.
 
 Main features:
 
