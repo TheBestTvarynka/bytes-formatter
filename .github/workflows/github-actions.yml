@@ -26,7 +26,6 @@ jobs:
 
     - name: 'Check'
       run: 'ls -l'
-      run: 'gcloud info'
 
     - name: 'Copy files to GCS'
-      run: 'echo soon'
+      run: 'gcloud info'
