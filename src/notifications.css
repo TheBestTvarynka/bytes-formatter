@@ -1,0 +1,26 @@
+.notifications {
+  position: absolute;
+  right: 2em;
+  bottom: 2em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+.info {
+  background-color: rgb(240, 248, 255);
+}
+
+.warn {
+  background-color: #f9fadc;
+}
+
+.error {
+  background-color: #fff0f0;
+}
+
+.notification {
+  cursor: pointer;
+  padding: 1em;
+  border-radius: 0.5em;
+}

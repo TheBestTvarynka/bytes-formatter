@@ -8,9 +8,9 @@ Visit this tool at [bf.qkation.com/index.html](https://bf.qkation.com/index.html
 
 Converts bytes between different representations: hex, base64, decimal, ascii, etc.
 
-Main features:
+Features:
 
-* supported formats: decimal, hex, base64, ascii
+* supported formats: `decimal`, `hex`, `base64`, `ascii`, and `binary`
 * share by the link
 * integrated [asn1 parser](https://lapo.it/asn1js/) (available for `hex` and `base64` output types)
 * remembers current state

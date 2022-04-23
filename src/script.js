@@ -17,7 +17,13 @@ const fromDecimal = data => new Uint8Array(
   data
     .split(/\D/)
     .filter(e => e !== '')
-    .map(e => +e)
+    .map(e => {
+      const n = +e;
+      if (n > 255) {
+        showNotification({ text: `Warn: too large byte value: ${n}`, type: 'warn' });
+      }
+      return n;
+    })
 );
 
 const isHexChar = c => ('0' <= c && c <= '9') || ('a' <= c && c <= 'f');
@@ -37,15 +43,20 @@ const fromAscii = data => new Uint8Array(
 );
 
 const fromBase64 = data => {
-  const chars = window.atob(data);
-  const len = chars.length;
-  const bytes = new Uint8Array(chars.length);
+  try {
+    const chars = window.atob(data);
+    const len = chars.length;
+    const bytes = new Uint8Array(chars.length);
 
-  for (let i = 0; i < len; i++) {
-    bytes[i] = chars.charCodeAt(i);
+    for (let i = 0; i < len; i++) {
+      bytes[i] = chars.charCodeAt(i);
+    }
+
+    return bytes;
+  } catch (e) {
+    showNotification({ text: 'Error: invalid base64 input', type: 'error' });
+    return new Uint8Array([]);
   }
-
-  return bytes;
 };
 
 const parsers = {
@@ -149,7 +160,10 @@ const convert = () => {
   saveInLocalStorage();
 };
 
-const copyOutputData = () => navigator.clipboard.writeText(document.getElementById('outData').value);
+const copyOutputData = async () => {
+  await navigator.clipboard.writeText(document.getElementById('outData').value);
+  showNotification({ text: 'Output copied', type: 'info' });
+};
 
 const swap = () => {
   const inType = document.getElementById('inType');
@@ -214,8 +228,6 @@ const toggleAutoConvert = () => {
 const onBodyLoad = () => {
   let parameters = new URLSearchParams(window.location.search);
 
-  console.dir(parameters);
-
   if (parameters.entries.length > 0) {
     if (parameters.get('in')) {
       document.getElementById('inType').value = parameters.get('in');
@@ -236,7 +248,7 @@ const onBodyLoad = () => {
   }
 };
 
-const share = () => {
+const share = async () => {
   const inType = document.getElementById('inType').selectedOptions[0].value;
   const outType = document.getElementById('outType').selectedOptions[0].value;
   const data = document.getElementById('inData').value;
@@ -244,5 +256,7 @@ const share = () => {
   const url = `?in=${inType}&out=${outType}&data=${encodeURIComponent(data)}`;
 
   window.history.pushState(url, url, url);
-  navigator.clipboard.writeText(window.location.href);
+  await navigator.clipboard.writeText(window.location.href);
+
+  showNotification({ text: 'Link copied. You can share it now', type: 'info' });
 };

@@ -6,19 +6,21 @@
     <title>Bytes formatter</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="examples.css">
+    <link rel="stylesheet" href="notifications.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300&display=swap" rel="stylesheet">
     <script src="script.js"></script>
+    <script src="notifications.js"></script>
 </head>
 
-<body onload="onBodyLoad()">
+<body id="body" onload="onBodyLoad()">
     <header>
         <span class="title">Bytes formatter</span>
         <span>The purpose of this tool is to convert bytes between different representations. See <span
                 onclick="toggleExamples()" class="clickableText">input examples</span>.</span>
     </header>
-    <article>
+    <article id="article">
         <div id="examples" class="hide examples">
             <div class="exampleRow">
                 <div class="description">
@@ -105,6 +107,7 @@
             license.</span>
         <span>Icons by: <a href="https://icons8.com">icons8.com</a></span>
     </footer>
+    <div id="notifications" class="notifications"></div>
 
 </body>
 
