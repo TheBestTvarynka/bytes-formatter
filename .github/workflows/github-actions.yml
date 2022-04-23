@@ -2,7 +2,10 @@ name: Deploy to Google Cloud Storage
 env:
   PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
   GCP_BUCKET: ${{ secrets.GCP_BUCKET }}
-on: [push]
+on:
+  push:
+    branches:
+    - 'main'
 jobs:
   deploy:
     name: Deploy
@@ -29,4 +32,4 @@ jobs:
       run: 'ls -l'
 
     - name: 'Copy files to GCS'
-      run: 'gcloud info'
+      run: './.github/workflows/copy_files_to_gcs.sh'
