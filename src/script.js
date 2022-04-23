@@ -157,7 +157,12 @@ const swap = () => {
 
   let buf = inType.selectedOptions[0].value;
 
-  inType.value = outType.selectedOptions[0].value;
+  const outTypeValue = outType.selectedOptions[0].value;
+  if (outTypeValue === 'decimalArray') {
+    inType.value = 'decimal';
+  } else {
+    inType.value = outTypeValue;
+  }
   outType.value = buf;
 
   const inData = document.getElementById('inData');
