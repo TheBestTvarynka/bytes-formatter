@@ -28,8 +28,5 @@ jobs:
     - name: 'Set up Cloud SDK'
       uses: google-github-actions/setup-gcloud@v0
 
-    - name: 'Check'
-      run: 'ls -l'
-
     - name: 'Copy files to GCS'
       run: './.github/workflows/copy_files_to_gcs.sh'

@@ -1,5 +1,7 @@
 ## bytes-formatter
 
+![deploy](https://github.com/TheBestTvarynka/bytes-formatter/actions/workflows/github-actions.yml/badge.svg)
+
 ![](img/example.png)
 
 Visit this tool at [bf.qkation.com/index.html](https://bf.qkation.com/index.html).
