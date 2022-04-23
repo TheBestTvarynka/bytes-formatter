@@ -1,13 +1,8 @@
 name: Deploy to Google Cloud Storage
-
 env:
   PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
   GCP_BUCKET: ${{ secrets.GCP_BUCKET }}
-
-on:
-  push:
-    branches:
-      - main
+on: [push]
 jobs:
   deploy:
     name: Deploy
