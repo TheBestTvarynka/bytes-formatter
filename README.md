@@ -4,7 +4,7 @@
 
 ![](img/example.png)
 
-Visit this tool at [bf.qkation.com/index.html](https://bf.qkation.com/index.html).
+Visit this tool at [bf.qkation.com](https://bf.qkation.com).
 
 Converts bytes between different representations: hex, base64, decimal, ascii, etc.
 
