@@ -10,7 +10,7 @@ Converts bytes between different representations: hex, base64, decimal, ascii, e
 
 Features:
 
-* supported formats: `decimal`, `hex`, `base64`, `ascii`, and `binary`
+* supported formats: `decimal`, `hex`, `base64`, `ascii`, `binary`, `utf-8`, and `utf-16`
 * share by the link
 * integrated [asn1 parser](https://lapo.it/asn1js/) (available for `hex` and `base64` output types)
 * remembers current state

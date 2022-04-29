@@ -59,12 +59,31 @@ const fromBase64 = data => {
   }
 };
 
+const fromUtf8 = data => new TextEncoder().encode(data);
+
+const fromUtf16 = data => {
+  const toUtf16Bytes = c => {
+    const hex = parseInt(c, 10).toString(16).padStart(4, '0');
+    return [parseInt(hex.substring(0, 2), 16), parseInt(hex.substring(2), 16)];
+  };
+
+  let bytes = [];
+
+  for (let i = 0, len = data.length; i < len; i++) {
+    bytes = bytes.concat(toUtf16Bytes(data.charCodeAt(i)));
+  }
+
+  return new Uint8Array(bytes);
+};
+
 const parsers = {
   'binary': fromBinary,
   'decimal': fromDecimal,
   'hex': fromHex,
   'base64': fromBase64,
   'ascii': fromAscii,
+  'utf-8': fromUtf8,
+  'utf-16': fromUtf16,
 };
 
 const toBinary = data => {
@@ -103,6 +122,10 @@ const toAscii = data => {
   return result.join('');
 };
 
+const toUtf8 = data => (new TextDecoder().decode(data)).toString();
+
+const toUtf16 = data => (new TextDecoder('utf-16').decode(data)).toString();
+
 const formatters = {
   'binary': toBinary,
   'decimal': toDecimal,
@@ -110,6 +133,8 @@ const formatters = {
   'hex': toHex,
   'base64': toBase64,
   'ascii': toAscii,
+  'utf-8': toUtf8,
+  'utf-16': toUtf16,
 };
 
 const saveInLocalStorage = () => {

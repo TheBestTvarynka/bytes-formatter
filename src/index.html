@@ -5,10 +5,10 @@
     <meta charset="UTF-8" />
     <meta name="author" content="Pavlo Myroniuk">
     <meta name="description"
-        content="Byte converter. Converts bytes between different representations: hex, base64, decimal, ascii, binary. Has integrated asn1 parser.">
-    <meta property="og:title" content="Bytes converter">
+        content="Bytes converter and formatter. Converts bytes between different representations: hex, base64, decimal, ascii, binary, utf-8, utf-16. Has integrated asn1 parser.">
+    <meta property="og:title" content="Bytes converter and formatter">
     <meta name="og:description"
-        content="Byte converter. Converts bytes between different representations: hex, base64, decimal, ascii, binary. Has integrated asn1 parser.">
+        content="Bytes converter and formatter. Converts bytes between different representations: hex, base64, decimal, ascii, binary, utf-8, utf-16. Has integrated asn1 parser.">
 
     <title>Bytes formatter</title>
     <link rel="stylesheet" href="style.css">
@@ -72,6 +72,8 @@
                 <option value="hex">Hex</option>
                 <option value="base64">Base64</option>
                 <option value="ascii">Ascii</option>
+                <option value="utf-8">Utf-8</option>
+                <option value="utf-16">Utf-16</option>
             </select>
             <span>out:</span>
             <select id="outType" onchange="toggleAsn1Button()">
@@ -81,6 +83,8 @@
                 <option value="hex" selected>Hex</option>
                 <option value="base64">Base64</option>
                 <option value="ascii">Ascii</option>
+                <option value="utf-8">Utf-8</option>
+                <option value="utf-16">Utf-16</option>
             </select>
             <div class="paramTool" onclick="swap()">
                 <img src="../img/replace1.png" alt="copy" />
