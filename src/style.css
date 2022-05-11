@@ -1,5 +1,5 @@
 body {
-    font-family: 'Source Code Pro', monospace;
+    font-family: 'JetBrains Mono', monospace;
     padding: 0;
     margin: 0;
     width: 100%;
@@ -62,14 +62,14 @@ article {
 }
 
 button {
-    font-family: 'Source Code Pro', monospace;
+    font-family: 'JetBrains Mono', monospace;
     width: fit-content;
 }
 
 textarea {
     resize: vertical;
     margin-top: 1em;
-    font-family: 'Source Code Pro', monospace;
+    font-family: 'JetBrains Mono', monospace;
 }
 
 .tools {
