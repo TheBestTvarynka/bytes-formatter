@@ -253,21 +253,29 @@ const toggleAutoConvert = () => {
 const onBodyLoad = () => {
   let parameters = new URLSearchParams(window.location.search);
 
-  console.log(parameters);
+  let flag = true;
 
-  if (parameters.entries.length > 0) {
-    if (parameters.get('in')) {
-      document.getElementById('inType').value = parameters.get('in');
-    }
+  if (parameters.get('in') != null) {
+    flag = true;
+    document.getElementById('inType').value = parameters.get('in');
+  }
 
-    if (parameters.get('out')) {
-      document.getElementById('outType').value = parameters.get('out');
-    }
+  if (parameters.get('out') != null) {
+    flag = true;
+    document.getElementById('outType').value = parameters.get('out');
+  }
 
-    if (parameters.get('data')) {
-      document.getElementById('inData').value = decodeURIComponent(parameters.get('data'));
-    }
+  if (parameters.get('data')) {
+    flag = true;
+    document.getElementById('inData').value = decodeURIComponent(parameters.get('data'));
+  }
 
+  if (parameters.get('autoconvert')) {
+    flag = true;
+    document.getElementById('autoConvert').checked = decodeURIComponent(parameters.get('autoconvert'));
+  }
+
+  if (flag) {
     toggleAsn1Button();
     toggleAutoConvert();
   } else {
@@ -279,8 +287,9 @@ const share = async () => {
   const inType = document.getElementById('inType').selectedOptions[0].value;
   const outType = document.getElementById('outType').selectedOptions[0].value;
   const data = document.getElementById('inData').value;
+  const autoConvert = document.getElementById('autoConvert').value;
 
-  const url = `?in=${inType}&out=${outType}&data=${encodeURIComponent(data)}`;
+  const url = `?in=${inType}&out=${outType}&data=${encodeURIComponent(data)}&autoconvert=${autoConvert}`;
 
   window.history.pushState(url, url, url);
   await navigator.clipboard.writeText(window.location.href);
