@@ -253,6 +253,8 @@ const toggleAutoConvert = () => {
 const onBodyLoad = () => {
   let parameters = new URLSearchParams(window.location.search);
 
+  console.log(parameters);
+
   if (parameters.entries.length > 0) {
     if (parameters.get('in')) {
       document.getElementById('inType').value = parameters.get('in');
