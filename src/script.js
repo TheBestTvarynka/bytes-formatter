@@ -216,7 +216,7 @@ const swap = () => {
 }
 
 const decodeAsAsn1 = () => window.open(
-  `https://lapo.it/asn1js/#${document.getElementById('outData').value}`,
+  `https://asn1.qkation.com/#${document.getElementById('outData').value}`,
   '_blank'
 ).focus();
 
