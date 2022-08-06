@@ -12,7 +12,7 @@ Features:
 
 * supported formats: `decimal`, `hex`, `base64`, `ascii`, `binary`, `utf-8`, and `utf-16`
 * share by the link
-* integrated [asn1 parser](https://lapo.it/asn1js/) (available for `hex` and `base64` output types)
+* integrated [asn1 parser](https://asn1.qkation.com) (available for `hex` and `base64` output types)
 * remembers current state
 
 ### Meta
