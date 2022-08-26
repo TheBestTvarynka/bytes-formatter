@@ -180,7 +180,10 @@ const convert = () => {
   const inData = document.getElementById('inData').value;
   const outData = document.getElementById('outData');
 
-  outData.value = formatters[outType](parsers[inType](inData));
+  const data = parsers[inType](inData);
+
+  updateBytesCounter(data.length);
+  outData.value = formatters[outType](data);
 
   saveInLocalStorage();
 };
@@ -295,4 +298,9 @@ const share = async () => {
   await navigator.clipboard.writeText(window.location.href);
 
   showNotification({ text: 'Link copied. You can share it now', type: 'info' });
+};
+
+const updateBytesCounter = amount => {
+  const counter = document.getElementById("bytesCounter");
+  counter.innerText = amount;
 };

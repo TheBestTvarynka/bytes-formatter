@@ -141,3 +141,8 @@ footer>span {
 footer>span:first-child {
     margin-top: 1em;
 }
+
+.totalBytes {
+    font-size: 0.8em;
+    color: darkslategrey;
+}
