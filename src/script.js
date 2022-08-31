@@ -286,6 +286,10 @@ const onBodyLoad = () => {
   }
 };
 
+const onFormatChange = () => {
+  convert();
+}
+
 const share = async () => {
   const inType = document.getElementById('inType').selectedOptions[0].value;
   const outType = document.getElementById('outType').selectedOptions[0].value;

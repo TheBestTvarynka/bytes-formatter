@@ -66,7 +66,7 @@
         </div>
         <div class="parameters">
             <span>in:</span>
-            <select id="inType">
+            <select id="inType" onchange="onFormatChange()">
                 <option value="binary">Binary</option>
                 <option value="decimal" selected>Decimal</option>
                 <option value="hex">Hex</option>
@@ -76,7 +76,7 @@
                 <option value="utf-16">Utf-16</option>
             </select>
             <span>out:</span>
-            <select id="outType" onchange="toggleAsn1Button()">
+            <select id="outType" onchange="onFormatChange(); toggleAsn1Button();">
                 <option value="binary">Binary</option>
                 <option value="decimal">Decimal</option>
                 <option value="decimalArray">Decimal array</option>
