@@ -122,7 +122,13 @@
         <span>Icons by: <a href="https://icons8.com">icons8.com</a></span>
     </footer>
     <div id="notifications" class="notifications"></div>
-
+    <script>
+        document.addEventListener('keypress', event => {
+            if (event.ctrlKey && event.key === 'Enter') {
+                convert();
+            }
+        });
+    </script>
 </body>
 
 </html>
