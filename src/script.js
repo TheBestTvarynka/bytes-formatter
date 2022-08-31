@@ -227,7 +227,7 @@ const toggleAsn1Button = () => {
   const outType = document.getElementById('outType').value;
 
   if (outType === 'hex' || outType === 'base64') {
-    document.getElementById('asn1Tool').classList.remove("hide");
+    document.getElementById('asn1Tool').classList.remove('hide');
   } else {
     document.getElementById('asn1Tool').classList.add('hide');
   }
