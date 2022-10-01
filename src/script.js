@@ -44,6 +44,15 @@ const fromAscii = data => new Uint8Array(
 
 const fromBase64 = data => {
   try {
+    if (data.includes('_') || data.includes('-')) {
+      showNotification({ text: 'Warning: invalid base64. Trying decode as url encoded base64', type: 'warn' });
+
+      data = data.replaceAll('_', '/').replaceAll('-', '+');
+
+      while (data.length % 4 != 0) {
+        data += '=';
+      }
+    }
     const chars = window.atob(data);
     const len = chars.length;
     const bytes = new Uint8Array(chars.length);
