@@ -25,8 +25,10 @@
 <body id="body" onload="onBodyLoad()">
     <header>
         <span class="title">Bytes formatter</span>
-        <span>The purpose of this tool is to convert bytes between different representations. See <span
-                onclick="toggleExamples()" class="clickableText">input examples</span>.</span>
+        <span>
+            The purpose of this tool is to convert bytes between different representations.
+            <span onclick="toggleExamples()" class="clickableText"><span id="show">Show</span> input examples</span>.
+        </span>
     </header>
     <article id="article">
         <div id="examples" class="hide examples">
@@ -125,7 +127,7 @@
     <div id="notifications" class="notifications"></div>
     <script>
         document.addEventListener('keypress', event => {
-            if (event.ctrlKey && event.key === 'Enter') {
+            if (event.ctrlKey && event.charCode === 10) {
                 convert();
             }
         });

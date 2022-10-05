@@ -250,6 +250,14 @@ const toggleExamples = () => {
   } else {
     examples.classList.add('hide');
   }
+
+  const show = document.getElementById('show');
+  
+  if (show.innerText === 'Show') {
+    show.innerText = 'Hide';
+  } else {
+    show.innerHTML = 'Show';
+  }
 };
 
 const toggleAutoConvert = () => {
