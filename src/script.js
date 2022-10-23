@@ -137,8 +137,7 @@ const toUtf16 = data => (new TextDecoder('utf-16').decode(data)).toString();
 
 const formatters = {
   'binary': toBinary,
-  'decimal': toDecimal,
-  'decimalArray': toDecimalArray,
+  'decimal': toDecimalArray,
   'hex': toHex,
   'base64': toBase64,
   'ascii': toAscii,
@@ -208,12 +207,7 @@ const swap = () => {
 
   let buf = inType.selectedOptions[0].value;
 
-  const outTypeValue = outType.selectedOptions[0].value;
-  if (outTypeValue === 'decimalArray') {
-    inType.value = 'decimal';
-  } else {
-    inType.value = outTypeValue;
-  }
+  inType.value = outType.selectedOptions[0].value;
   outType.value = buf;
 
   const inData = document.getElementById('inData');
@@ -222,9 +216,9 @@ const swap = () => {
   buf = inData.value;
 
   inData.value = outData.value;
-  outData.value = buf;
 
   toggleAsn1Button();
+  convert();
 }
 
 const decodeAsAsn1 = () => window.open(
