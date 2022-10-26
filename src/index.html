@@ -19,6 +19,7 @@
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&family=Source+Code+Pro:wght@300&display=swap" rel="stylesheet">
     <script src="script.js"></script>
     <script src="notifications.js"></script>
+    <script src="selection.js"></script>
     <link rel="icon" type="image/png" href="../img/favicon.png">
 </head>
 
@@ -100,7 +101,8 @@
             </label>
         </div>
         <div class="tools">
-            <span class="totalBytes">total bytes: <span id="bytesCounter">0</span></span>
+            <span class="totalBytes">total bytes: <span id="bytesCounter">0</span>.</span>
+            <span class="totalBytes">selected <span id="selectedBytesCounter" onclick="copySelectedBytes()">0</span> byte(s).</span>
         </div>
         <textarea id="outData" placeholder="Output data..." readonly rows="7"></textarea>
         <div class="tools">
