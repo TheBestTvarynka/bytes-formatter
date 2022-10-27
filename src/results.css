@@ -1,0 +1,31 @@
+
+.results-container {
+    margin-top: 0.3em;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3em;
+}
+
+.result {
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    width: calc(100% - 0.4em);
+    height: 2em;
+    border-radius: 0.3em;
+    padding: 0.2em;
+}
+
+.result:hover {
+    background-color: #ded6cc;
+}
+
+.result:hover .result-options {
+    display: inline-flex;
+    gap: 0.3em;
+    align-items: center;
+}
+
+.result-options {
+    display: none;
+}

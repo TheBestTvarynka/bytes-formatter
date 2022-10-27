@@ -221,10 +221,18 @@ const swap = () => {
   convert();
 }
 
-const decodeAsAsn1 = () => window.open(
-  `https://asn1.qkation.com/#${document.getElementById('outData').value}`,
-  '_blank'
-).focus();
+const decodeAsAsn1 = () => {
+  const value = document.getElementById('outData').value;
+
+  if (!value) {
+    return;
+  }
+
+  window.open(
+    `https://asn1.qkation.com/#${value}`,
+    '_blank'
+  ).focus();
+}
 
 const toggleAsn1Button = () => {
   const outType = document.getElementById('outType').value;
