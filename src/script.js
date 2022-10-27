@@ -303,6 +303,14 @@ const onBodyLoad = () => {
   } else {
     loadFromLocalStorage();
   }
+
+  const results = window.localStorage.getItem('results');
+  if (results) {
+    const resultsContainer = document.getElementById('resultsContainer');
+    for (const result of results) {
+      resultsContainer.appendChild(createResultElement(result));
+    }
+  }
 };
 
 const onFormatChange = () => {
