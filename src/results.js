@@ -68,6 +68,10 @@ const saveResultToLocalStorage = text => {
 const saveToResults = () => {
   const value = document.getElementById('outData').value;
 
+  if (!value) {
+    return;
+  }
+
   for (const result of document.getElementsByClassName('result')) {
     if (result.childNodes[0].innerText === value) {
       showNotification({ text: 'Already saved.', type: 'warn' });
