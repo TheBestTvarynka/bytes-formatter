@@ -24,8 +24,6 @@ document.onselectionchange = () => {
     const outType = document.getElementById('outType').selectedOptions[0].value;
     const data = parsers[outType](selection);
     count = data.length;
-  } else {
-    return;
   }
 
   document.getElementById('selectedBytesCounter').innerText = count;
