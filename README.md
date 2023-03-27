@@ -10,14 +10,14 @@ Converts bytes between different representations: hex, base64, decimal, ascii, e
 
 Features:
 
-* supported formats: `decimal`, `hex`, `base64`, `ascii`, `binary`, `utf-8`, and `utf-16`
-* share by the link
-* integrated [asn1 parser](https://asn1.qkation.com) (available for `hex` and `base64` output types)
-* remembers current state
+* supported formats: `decimal`, `hex`, `base64`, `ascii`, `binary`, `utf-8`, and `utf-16`;
+* share by the link;
+* integrated [asn1 parser](https://asn1.qkation.com) (available for `hex` and `base64` output types);
+* remembers current state.
 
 ### Meta
 
-Pavlo Myroniuk - [pspos.developqkation@gmail.com](mailto:pspos.developqkation@gmail.com).
+Pavlo Myroniuk - [the.best.tvarynka@gmail.com](mailto:the.best.tvarynka@gmail.com).
 
 Distributed under the [MIT](https://github.com/TheBestTvarynka/bytes-formatter/blob/main/LICENSE) license.
 
@@ -25,7 +25,7 @@ Distributed under the [MIT](https://github.com/TheBestTvarynka/bytes-formatter/b
 
 Feel free to contribute.
 
-1. Fork it (<https://github.com/yourname/yourproject/fork>)
+1. Fork it (<https://github.com/TheBestTvarynka/bytes-formatter/fork>)
 2. Create your feature branch (`git checkout -b feature/fooBar`)
 3. Commit your changes (`git commit -am 'Add some fooBar'`)
 4. Push to the branch (`git push origin feature/fooBar`)
