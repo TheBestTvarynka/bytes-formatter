@@ -4,6 +4,12 @@
 
 ![deploy](https://github.com/TheBestTvarynka/bytes-formatter/actions/workflows/github-actions.yml/badge.svg)
 
+### Project status
+
+**Is it actively developed? NO.** I have implemented all the features I needed.
+
+**Is it maintained? YES.** Discovered bugs will be fixed. External PRs will be accepted.
+
 ![](img/example.png)
 
 Visit this tool at [bf.qkation.com](https://bf.qkation.com).
